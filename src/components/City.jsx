@@ -1,10 +1,20 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 
 function City() {
   const { id } = useParams();
+  const [searchParams] = useSearchParams();
+  const lat = searchParams.get('lat');
+  const lng = searchParams.get('lng');
   // TEMP DATA
 
-  return <h4>City {id}</h4>;
+  return (
+    <>
+      <h4>City {id}</h4>
+      <p>
+        Position: {lat}, {lng}
+      </p>
+    </>
+  );
 
   //   return (
   //     <div className={styles.city}>
