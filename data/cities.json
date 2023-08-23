@@ -1,26 +1,26 @@
 {
   "cities": [
     {
-      "cityName": "Renera",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-08-23T19:26:11.811Z",
-      "notes": "",
+      "cityName": "Belize City",
+      "country": "Belize",
+      "emoji": "🇧🇿",
+      "date": "2023-08-23T19:27:22.076Z",
+      "notes": "Aqui estaba chingon",
       "position": {
-        "lat": "40.49709237269567",
-        "lng": "-2.9882812500000004"
+        "lat": "17.49869914567877",
+        "lng": "-88.20167541503908"
       },
       "id": 1
     },
     {
-      "cityName": "Moulay Idriss Zerhoun",
-      "country": "Morocco",
-      "emoji": "🇲🇦",
-      "date": "2023-08-23T19:26:21.777Z",
-      "notes": "ronaldo",
+      "cityName": "El Paso",
+      "country": "United States of America (the)",
+      "emoji": "🇺🇸",
+      "date": "2023-08-23T19:28:01.375Z",
+      "notes": "hometown",
       "position": {
-        "lat": "34.05265942137599",
-        "lng": "-5.537109375000001"
+        "lat": "31.771667028016626",
+        "lng": "-106.4037036895752"
       },
       "id": 2
     }
