@@ -1,22 +1,24 @@
 import { useEffect, useState } from 'react';
-import { useAuth } from '../contexts/FakeAuthContext';
 import { useNavigate } from 'react-router-dom';
-import PageNav from '../components/PageNav';
 import Button from '../components/Button';
+import PageNav from '../components/PageNav';
+import { useAuth } from '../contexts/FakeAuthContext';
 import styles from './Login.module.css';
 
 export default function Login() {
+  // PRE-FILL FOR DEV PURPOSES
   const [email, setEmail] = useState('jack@example.com');
   const [password, setPassword] = useState('qwerty');
 
   const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
 
     if (email && password) login(email, password);
   }
+
   useEffect(
     function () {
       if (isAuthenticated) navigate('/app', { replace: true });
@@ -25,27 +27,30 @@ export default function Login() {
   );
 
   return (
-    <main>
+    <main className={styles.login}>
       <PageNav />
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">email address</label>
+
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.row}>
+          <label htmlFor="email">Email address</label>
           <input
             type="email"
             id="email"
-            onChange={(event) => setEmail(event.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             value={email}
           />
         </div>
-        <div>
-          <label htmlFor="password">password</label>
+
+        <div className={styles.row}>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
-            onChange={(event) => setPassword(event.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
         </div>
+
         <div>
           <Button type="primary">Login</Button>
         </div>
